@@ -1,1 +1,10 @@
-rails plugin to handle pinging to google and pingomatic
+rails plugin to handle pinging google regarding sitemap
+and pingomatic about new posts
+
+requires:
+  net/http
+  uri
+
+notes:
+  only pings in production mode
+
