@@ -1,8 +1,10 @@
-#pingify
+# send_pingomatic + send_sitemap
 require 'net/http'
 require 'uri'
+
+# send_ping
 require 'ping'
 
-#load
+# load
 require 'pingify'
 
