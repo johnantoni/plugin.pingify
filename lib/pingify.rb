@@ -6,6 +6,9 @@ module Pingify
   def send_pingomatic(uri)
     # ping pingomatic
     if ENV['RAILS_ENV'] == 'production'
+      require 'net/http'
+      require 'uri'
+
       enc_uri = URI.escape(uri)
 
       ping_url = "pingomatic.com"
@@ -18,6 +21,9 @@ module Pingify
   def send_sitemap(uri)
     # ping sitemap
     if ENV['RAILS_ENV'] == 'production'
+      require 'net/http'
+      require 'uri'
+
       uri = uri+'/sitemap.xml'
 
       enc_uri = URI.escape(uri)
@@ -27,9 +33,10 @@ module Pingify
     end
   end
 
-  def send_ping(uri, timeout=5, service="echo")
+  def send_ping(uri, port=80)
     # ping uri
-    return uri.blank? ? false : Ping.pingecho(uri, timeout, service)
+    require 'net/ping/external'
+    return uri.blank? ? false : Net::Ping::External.new(uri,port).ping?
   end
 
 end

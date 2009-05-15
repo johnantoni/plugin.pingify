@@ -1,10 +1,15 @@
-rails plugin to handle pinging google regarding sitemap
-and pingomatic about new posts
+rails plugin to handle:
 
-requires:
-  net/http
-  uri
+  pinging google regarding sitemap
+  pinging pingomatic about new posts
+  pinging uri's & returning true if alive, false if not
 
-notes:
-  only pings in production mode
+install gems
+------------
+  to install required gems run
+
+    rake pingify:install
+
+
+john griffiths / www.johnantoni.com
 

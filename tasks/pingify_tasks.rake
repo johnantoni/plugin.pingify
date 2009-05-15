@@ -1,4 +1,9 @@
-# desc "Explaining what the task does"
-# task :pingify do
-#   # Task goes here
-# end
+namespace :pingify do
+
+  desc "install gems"
+  task :install do
+    system "sudo gem install net-ping"
+  end
+
+end
+
