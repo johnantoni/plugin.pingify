@@ -26,5 +26,9 @@ module Pingify
     end
   end
 
+  def send_ping(uri, timeout=5, service="echo")
+    return Ping.pingecho(uri, timeout, service)
+  end
+
 end
 
