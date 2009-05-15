@@ -4,11 +4,41 @@ rails plugin to handle:
   pinging pingomatic about new posts
   pinging uri's & returning true if alive, false if not
 
+
 install gems
 ------------
   to install required gems run
 
     rake pingify:install
+
+
+notes
+-----
+  send_pingomatic
+    # ping pingomatic
+    # returns...
+    # => nothing, simply sends
+    # notes...
+    # => setup only to ping in production mode
+
+  send_sitemap
+    # ping sitemap
+    # returns...
+    # => nothing, simply sends
+    # notes...
+    # => setup only to ping in production mode
+
+  send_ping
+    # ping uri
+    # returns..
+    # => nil    (no uri specified)
+    # => flase  (uri did not respond, down)
+    # => true   (uri responded, alive)
+    # notes..
+    # => uses local machine's ping program to send ping
+
+  include ActionController::UrlWriter
+    # only needed for send_pingomatic + send_sitemap
 
 
 john griffiths / www.johnantoni.com
