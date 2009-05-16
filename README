@@ -10,25 +10,33 @@ install gems
   to install required gems run
 
     rake pingify:install
+      only requires 'net-ping'
 
+how-to
+------
+  init the class object with
+    @p = Pingify.new
 
-notes
------
-  send_pingomatic
+  then use
+    @p.ping('www.google.com')
+
+docs
+----
+  notify_pingomatic
     # ping pingomatic
     # returns...
     # => nothing, simply sends
     # notes...
     # => setup only to ping in production mode
 
-  send_sitemap
+  notify_sitemap
     # ping sitemap
     # returns...
     # => nothing, simply sends
     # notes...
     # => setup only to ping in production mode
 
-  send_ping
+  ping
     # ping uri
     # returns..
     # => nil    (no uri specified)
@@ -37,8 +45,10 @@ notes
     # notes..
     # => uses local machine's ping program to send ping
 
+notes
+-----
   include ActionController::UrlWriter
-    # only needed for send_pingomatic + send_sitemap
+    # only needed for notify_pingomatic + notify_sitemap
 
 
 john griffiths / www.johnantoni.com
